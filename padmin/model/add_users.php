@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
 		$req = $bdd->prepare('INSERT INTO users(nom, prenom, email, password, start_contrat,
 			end_contrat, heure_semaine, salaire_brut, salaire_net, societe, role_id)
 		VALUES (:nom, :prenom, :email, :password, :start_contrat, :end_contrat, :heure_semaine,
-			:salaire_brut, :salaire_net, :societe INNER JOIN role ON role.id = role_id)');
+			:salaire_brut, :salaire_net, :societe, :role_id)');
 		$req->execute(array(
 			"nom" => $nom,
 			"prenom" => $prenom,
