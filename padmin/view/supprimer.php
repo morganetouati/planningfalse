@@ -43,12 +43,77 @@
 							<td width="20%"><?php echo $membre_array['salaire_brut']; ?></td>
 							<td width="20%"><?php echo $membre_array['salaire_net']; ?></td>
 							<td width="20%"><?php echo $membre_array['societe']; ?></td>
-							<td width="20%"><?php echo $membre_array['role_id']; ?></td>
-							<button class="btn btn-success" style="float:right;position:relative;top:78px;left:14%;" name="submit" type="submit" value="Supprimer" name="btn-delete"/>Supprimer</button>
+							<td width="20%"><?php echo $membre_array['role']; ?></td>
+							<td><button class="btn btn-danger delete-row-profil" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
 						</form>
 						<a href=javascript:history.go(-1)>Retour</a>
-					</tbody>
-				</table>
-			</div>
-		</body>
-		</html>
+					</tr>
+				</tbody>
+			</table>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>start</th>
+						<th>pause</th>
+						<th>reprise</th>
+						<th>fin</th>
+						<th>total journée</th>
+						<th>total semaine</th>
+						<th>total mois</th>
+						<th>total année</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<?php
+						include('../model/horaire.php');
+						?>
+						<form method="post" action="../model/deletehoraires.php">
+							<td style="display:none;"><input type="text" name="mois" value="'.$v['mois'].'" /></td>
+							<td style="display:none;"><input type="text" name="annee" value="'.$v['annee'].'" /></td>
+							<td style="display:none;"><input type="text" name="semaine" value="'.$v['semaine'].'" /></td>
+							<td style="display:none;"><input type="text" name="id_horaire" value="'.$v['id_horaire'].'" /></td>
+							<td style="display:none;"><input type="text" name="id_users" value="'.$v['id_users'].'" /></td>
+							<td width="20%"><?php echo $v['start']; ?></td>
+							<td width="20%"><?php echo $v['pause']; ?></td>
+							<td width="20%"><?php echo $v['reprise']; ?></td>
+							<td width="20%"><?php echo $v['fin']; ?></td>
+							<td width="20%"><?php echo $v['total_journee']; ?></td>
+							<td width="20%"><?php echo $v['total_semaine']; ?></td>
+							<td width="20%"><?php echo $v['total_mois']; ?></td>
+							<td width="20%"><?php echo $v['total_annee']; ?></td>
+							<td><button class="btn btn-danger delete-row-horaire" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
+						</form>
+						<a href=javascript:history.go(-1)>Retour</a>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+		$(".delete-row-profil").on("click", function()
+		{
+			var $input = $(this).closest("tr").find(":input").serialize();
+			$.ajax({
+			url: "../model/delete.php",
+			type: "POST",
+			data: $input,
+			complete : function(resultat, statut){
+				window.location.reload();
+			}
+		});
+	});
+	$(".delete-row-horaire").on("click", function()
+	{
+		var $input = $(this).closest("tr").find(":input").serialize();
+		$.ajax({
+			url: "../model/deletehoraires.php",
+			type: "POST",
+			data: $input,
+			complete : function(resultat, statut){
+				window.location.reload();
+			}
+		});
+	})
+	</script>
+	</body>
+</html>
