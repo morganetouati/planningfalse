@@ -1,0 +1,229 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: Verdana;
+	font-size: 30px;
+	color: black;
+	text-align: center;
+	margin-top: 20px;
+}
+
+h2 {
+	font-family: Verdana;
+	font-size: 25px;
+	color: black;
+	text-align: center;
+	margin-top: 1%;
+}
+
+nav {
+	margin-top: 20px;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
+
+li {
+	float: left;
+}
+
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+form{
+	border-radius: 5px;
+	background-color: #a25050;
+	padding: 20px;
+	width: 42%;
+	position: absolute;
+	top: 26%;
+	left: 27%;
+}
+
+label {
+	float: left;
+	display: block;
+	width: 150px;
+}
+
+input[type=text], select {
+	width: 63%;
+	padding: 12px 20px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
+
+input[type=email], select {
+	width: 63%;
+	padding: 12px 20px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
+
+input[type=password], select {
+	width: 63%;
+	padding: 12px 20px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
+
+input[type=number], select {
+	width: 63%;
+	padding: 12px 20px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
+
+input[type=date], select {
+	width: 63%;
+	padding: 12px 20px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
+
+input[type=button], select {
+	width: 63%;
+	padding: 12px 20px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-bottom: 8px;
+	box-sizing: border-box;
+}
+
+input[type=submit] {
+	width: 50%;
+	background-color: #f02727;
+	color: white;
+	padding: 14px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 23%;
+}
+
+input[type=submit]:hover {
+	background-color:pink;
+}
+
+form#horaire{
+	border: 1px solid black;
+	width: 25%;
+	margin-top: 8%;
+	position: relative;
+	float: left;
+	left: 3%;
+}
+
+form#horaire label{
+	float: left;
+	font-size: 16px;
+	color: white;
+}
+
+form#horaire button[type=submit]{
+	background-color: grey;
+	width: 43%;
+	background-color: darkred;
+	color: white;
+	padding: 14px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-left: 48%;
+	margin-top: -11px;
+	font-size: 14px;
+}
+form#horaire button[type=submit][disabled=disabled] {
+	background-color: grey;
+}
+
+table#heure{
+	border-collapse: collapse;
+	position: relative;
+	float: right;
+	right: 3%;
+	margin-top: 7%;
+}
+
+#fleche{
+	margin-bottom:5%;
+}
+
+#fleche img#pre{
+	height:40px;
+	width:40px;
+	float: left;
+	position: fixed;
+	top: 30%;
+	left: 14%;
+}
+
+#fleche img#post{
+	height:40px;
+	width:40px;
+	float: right;
+	position: fixed;
+	top: 30%;
+	right: 14%;
+}
+
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 2px;
+	text-align: left;
+}
+
+.plein{
+	font-size:large;
+	text-align:center;
+	border:1px solid grey;
+	font-weight:bold;
+	background-color:white;
+}
+
+#cont{
+	height:80%;
+	width:80%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/*form #edithoraires button{
+color: red;
+}*/
