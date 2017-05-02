@@ -33,7 +33,6 @@
 						<?php
 						include('../model/user.php');
 						?>
-
 						<form method="post" action="../model/edit.php">
 							<td width="20%"><?php echo $membre_array['id_users']; ?></td>
 							<input type="hidden" name="id" value="<?php echo $membre_array['id_users']; ?>" />
@@ -69,56 +68,55 @@
 					include('../model/horaire.php');
 					?>
 					<tr>
-                        <?php
-                        foreach ($horaire_array as $v) {
-                        	echo'<td style="display:none;"><input type="text" name="mois" value="'.$v['mois'].'" /></td>';
-                            echo'<td style="display:none;"><input type="text" name="annee" value="'.$v['annee'].'" /></td>';
-                            echo'<td style="display:none;"><input type="text" name="semaine" value="'.$v['semaine'].'" /></td>';
-                            echo'<td style="display:none;"><input type="text" name="id_horaire" value="'.$v['id_horaire'].'" /></td>';
-                            echo'<td style="display:none;"><input type="text" name="id_users" value="'.$v['id_users'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="start" value="'.$v['start'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="pause" value="'.$v['pause'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="reprise" value="'.$v['reprise'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="fin" value="'.$v['fin'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="total_journee" value="'.$v['total_journee'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="total_semaine" value="'.$v['total_semaine'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="total_mois" value="'.$v['total_mois'].'" /></td>';
-                            echo'<td width="20%"><input type="text" name="total_annee" value="'.$v['total_annee'].'" /></td>';
-                            ?>
-                            <td><button class="btn btn-success modify-row" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
-							<td><button class="btn btn-danger delete-row" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
-                        </tr>
-
-                    <?php } ?>
+						<?php
+						foreach ($horaire_array as $v) {
+							echo'<td style="display:none;"><input type="text" name="mois" value="'.$v['mois'].'" /></td>';
+							echo'<td style="display:none;"><input type="text" name="annee" value="'.$v['annee'].'" /></td>';
+							echo'<td style="display:none;"><input type="text" name="semaine" value="'.$v['semaine'].'" /></td>';
+							echo'<td style="display:none;"><input type="text" name="id_horaire" value="'.$v['id_horaire'].'" /></td>';
+							echo'<td style="display:none;"><input type="text" name="id_users" value="'.$v['id_users'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="start" value="'.$v['start'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="pause" value="'.$v['pause'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="reprise" value="'.$v['reprise'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="fin" value="'.$v['fin'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="total_journee" value="'.$v['total_journee'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="total_semaine" value="'.$v['total_semaine'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="total_mois" value="'.$v['total_mois'].'" /></td>';
+							echo'<td width="20%"><input type="text" name="total_annee" value="'.$v['total_annee'].'" /></td>';
+						?>
+						<td><button class="btn btn-success modify-row" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
+						<td><button class="btn btn-danger delete-row" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
+					</tr>
+						<?php } ?>
 						<a href=javascript:history.go(-1)>Retour</a>
-					</tbody>
-				</table>
-			</div>
-		</body>
-        <script>
-            $(".modify-row").on("click", function()
-            {
-                var $input = $(this).closest("tr").find(":input").serialize();
-                $.ajax({
-                    url: "../model/edithoraires.php",
-                    type: "POST",
-                    data: $input,
-                    complete : function(resultat, statut){
-                        window.location.reload();
-                    }
-                });
-            });
-            $(".delete-row").on("click", function()
-            {
-                var $input = $(this).closest("tr").find(":input").serialize();
-                $.ajax({
-                    url: "../model/deletehoraires.php",
-                    type: "POST",
-                    data: $input,
-                    complete : function(resultat, statut){
-                        window.location.reload();
-                    }
-                });
-            })
-        </script>
-		</html>
+				</tbody>
+			</table>
+		</div>
+	</body>
+	<script>
+	$(".modify-row").on("click", function()
+	{
+		var $input = $(this).closest("tr").find(":input").serialize();
+		$.ajax({
+			url: "../model/edithoraires.php",
+			type: "POST",
+			data: $input,
+			complete : function(resultat, statut){
+				window.location.reload();
+			}
+		});
+	});
+	$(".delete-row").on("click", function()
+	{
+		var $input = $(this).closest("tr").find(":input").serialize();
+		$.ajax({
+			url: "../model/deletehoraires.php",
+			type: "POST",
+			data: $input,
+			complete : function(resultat, statut){
+				window.location.reload();
+			}
+		});
+	})
+	</script>
+</html>

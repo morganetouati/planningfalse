@@ -23,6 +23,8 @@
 						<th>Nombre d'heures par semaine</th>
 						<th>Salaire brut</th>
 						<th>Salaire net</th>
+						<th>Societe</th>
+						<th>Statut</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -40,6 +42,8 @@
 							<td width="20%"><?php echo $membre_array['heure_semaine']; ?></td>
 							<td width="20%"><?php echo $membre_array['salaire_brut']; ?></td>
 							<td width="20%"><?php echo $membre_array['salaire_net']; ?></td>
+							<td width="20%"><?php echo $membre_array['societe']; ?></td>
+							<td width="20%"><?php echo $membre_array['role_id']; ?></td>
 							<button class="btn btn-success" style="float:right;position:relative;top:78px;left:14%;" name="submit" type="submit" value="Supprimer" name="btn-delete"/>Supprimer</button>
 						</form>
 						<a href=javascript:history.go(-1)>Retour</a>
