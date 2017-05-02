@@ -1,0 +1,9 @@
+choix heures normal
+sup
+formation
+conges payes
+conges sans soldes
+arret maladies
+heure sup week end
+
+page admin : modifier horaires / ajouter horaires pour les utilisateurs
