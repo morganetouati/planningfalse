@@ -1,3 +1,13 @@
+<?php
+
+require("../../bdd.php");
+
+$req = $bdd->prepare("SELECT id, libelle FROM role");
+$req->execute();
+$roles = $req->fetchAll();
+
+?>
+
 <!Doctype html>
 <html>
 <head>
@@ -41,6 +51,15 @@
 					<option value="DIGIFORM">DIGIFORM</option>
 					<option value="SAS KALLISTE">SAS KALLISTE</option>
 					<option value="SPECIS-UNSA">SPECIS-UNSA</option>
+				</select>
+				<label for="role">Statut</label>
+				<select name="role">
+					<?php
+					foreach ($roles as $role)
+					{
+						echo '<option value="'.$role["id"] .'">'.$role['libelle'].'</option>';
+					}
+					?>
 				</select>
 				<input type="submit" name="submit" value="Inscription"/>
 			</form>

@@ -39,7 +39,7 @@
 						<td width="20%"><?php echo $membre_array['salaire_brut']; ?></td>
 						<td width="20%"><?php echo $membre_array['salaire_net']; ?></td>
 						<td width="20%"><?php echo $membre_array['societe']; ?></td>
-						<td width="20%"><?php echo $membre_array['role']; ?></td>
+						<td width="20%"><?php echo $membre_array['role_id']; ?></td>
 						<!-- <a href=javascript:history.go(-1)>Retour</a> -->
 					</tr>
 				</tbody>

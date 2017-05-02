@@ -11,14 +11,13 @@ $heure_semaine = $_POST['heure_semaine'];
 $salaire_brut = $_POST['salaire_brut'];
 $salaire_net = $_POST['salaire_net'];
 $societe = $_POST['societe'];
-$role_id = $_POST['role'];
+$role_id = $_POST['role_id'];
 
 if(isset($_POST['submit']))
 {
 	if (!empty($nom) && !empty($prenom) && !empty($email) && !empty($password) 
 		&& !empty($start_contrat) && !empty($end_contrat) && !empty($heure_semaine)
-		&& !empty($salaire_brut) && !empty($salaire_net) && !empty($societe)  &&
-		is_numeric($heure_semaine) && is_numeric($salaire_brut) && is_numeric($salaire_net) && !empty($role_id))
+		&& !empty($salaire_brut) && !empty($salaire_net) && !empty($societe) && is_numeric($heure_semaine) && is_numeric($salaire_brut) && is_numeric($salaire_net) && !empty($role_id))
 	{
 		$req = $bdd->prepare('INSERT INTO users(nom, prenom, email, password, start_contrat,
 			end_contrat, heure_semaine, salaire_brut, salaire_net, societe, role_id)
