@@ -11,7 +11,7 @@ $heure_semaine = $_POST['heure_semaine'];
 $salaire_brut = $_POST['salaire_brut'];
 $salaire_net = $_POST['salaire_net'];
 $societe = $_POST['societe'];
-$role_id = $_POST['role_id'];
+$role_id = $_POST['role'];
 
 if(isset($_POST['submit']))
 {
