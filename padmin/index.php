@@ -19,11 +19,11 @@ $membre = $bdd->query("SELECT * FROM users");
 		while ($m = $membre->fetch())  {?>
 			<li><?= $m['id_users'] ?> : <?= $m['prenom'] ?> -
 				<a href="view/profil.php?user=<?=$m['id_users'] ?>">View</a> -
-				<a href="view/ajouter.php?user=<?=$m['id_users'] ?>">Ajouter</a> -
 				<a href="view/modifier.php?user=<?=$m['id_users'] ?>">Modifier</a> -
 				<a href="view/supprimer.php?user=<?=$m['id_users'] ?>">Supprimer</a>
 			</li>
 		<?php } ?>
+	<a href="view/ajouter.php">Ajouter</a>
 </ul>
 </body>
 </html>
