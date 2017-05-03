@@ -17,7 +17,7 @@ if(isset($_POST['submit']))
 {
 	if (!empty($nom) && !empty($prenom) && $email && !empty($password) 
 		&& !empty($start_contrat) && !empty($end_contrat) && !empty($heure_semaine)
-		&& !empty($salaire_brut) && !empty($salaire_net) && !empty($societe) &&
+		&& !empty($salaire_brut) && !empty($salaire_net) && !empty($societe) && !empty($role_id) &&
 		is_numeric($heure_semaine) && is_numeric($salaire_brut) && is_numeric($salaire_net))
 	{
 		$req = $bdd->prepare('INSERT INTO users(nom, prenom, email, password, start_contrat,

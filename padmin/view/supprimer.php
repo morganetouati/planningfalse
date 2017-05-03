@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"/></script>
 	<title>Panel Admin</title/>
 	</head>
 	<body>
@@ -46,8 +47,8 @@
 							<td width="20%"><?php echo $membre_array['role']; ?></td>
 							<td><button class="btn btn-danger delete-row-profil" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
 						</form>
-						<a href=javascript:history.go(-1)>Retour</a>
 					</tr>
+					<!-- <a href=javascript:history.go(-1)>Retour</a> -->
 				</tbody>
 			</table>
 			<table class="table table-bordered">
@@ -69,11 +70,11 @@
 						include('../model/horaire.php');
 						?>
 						<form method="post" action="../model/deletehoraires.php">
-							<td style="display:none;"><input type="text" name="mois" value="'.$v['mois'].'" /></td>
-							<td style="display:none;"><input type="text" name="annee" value="'.$v['annee'].'" /></td>
-							<td style="display:none;"><input type="text" name="semaine" value="'.$v['semaine'].'" /></td>
-							<td style="display:none;"><input type="text" name="id_horaire" value="'.$v['id_horaire'].'" /></td>
-							<td style="display:none;"><input type="text" name="id_users" value="'.$v['id_users'].'" /></td>
+							<td style="display:none;"><input type="text" name="mois" value="<?php echo $v['mois']; ?>"/></td>
+							<td style="display:none;"><input type="text" name="annee" value="<?php echo $v['annee']; ?>"/></td>
+							<td style="display:none;"><input type="text" name="semaine" value="<?php echo $v['semaine'];?>"/></td>
+							<td style="display:none;"><input type="text" name="id_horaire" value="<?php echo $v['id_horaire'];?>"/></td>
+							<td style="display:none;"><input type="text" name="id_users" value="<?php echo $v['id_users'];?>" /></td>
 							<td width="20%"><?php echo $v['start']; ?></td>
 							<td width="20%"><?php echo $v['pause']; ?></td>
 							<td width="20%"><?php echo $v['reprise']; ?></td>
@@ -82,18 +83,19 @@
 							<td width="20%"><?php echo $v['total_semaine']; ?></td>
 							<td width="20%"><?php echo $v['total_mois']; ?></td>
 							<td width="20%"><?php echo $v['total_annee']; ?></td>
-							<td><button class="btn btn-danger delete-row-horaire" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
+							<td><button class="btn btn-danger delete-row" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td>
 						</form>
-						<a href=javascript:history.go(-1)>Retour</a>
 					</tr>
+					<a href=javascript:history.go(-1)>Retour</a>
 				</tbody>
 			</table>
 		</div>
-		<script>
-		$(".delete-row-profil").on("click", function()
-		{
-			var $input = $(this).closest("tr").find(":input").serialize();
-			$.ajax({
+	</body>
+	<script>
+	$(".delete-row-profil").on("click", function()
+	{
+		var input = $(this).closest("tr").find(":input").serialize();
+		$.ajax({
 			url: "../model/delete.php",
 			type: "POST",
 			data: $input,
@@ -102,9 +104,9 @@
 			}
 		});
 	});
-	$(".delete-row-horaire").on("click", function()
+	$(".delete-row").on("click", function()
 	{
-		var $input = $(this).closest("tr").find(":input").serialize();
+		var input = $(this).closest("tr").find(":input").serialize();
 		$.ajax({
 			url: "../model/deletehoraires.php",
 			type: "POST",
@@ -113,7 +115,6 @@
 				window.location.reload();
 			}
 		});
-	})
+	});
 	</script>
-	</body>
-</html>
+	</html>

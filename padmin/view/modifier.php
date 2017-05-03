@@ -45,9 +45,9 @@
 							<td width="20%"><input type="text" name="salaire_net" value="<?php echo $membre_array['salaire_net']; ?>" /></td>
 							<td width="20%"><input type="text" name="societe" value="<?php echo $membre_array['societe']; ?>" /></td>
 							<td width="20%"><input type="text" name="role" value="<?php echo $membre_array['role']; ?>" /></td>
-							<td><button class="btn btn-success modify-row-profil" style="float:right;position:relative;" name="submitprofil" type="submit" value="Modifier" />Modifier</button></td>
-							<!-- <td><button class="btn btn-danger delete-row-role" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td> -->
-					</form>
+							<td><button class="btn btn-success modify-row-profil" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
+							<!-- <td><button class="btn btn-danger delete-row-profil" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td><td><button class="btn btn-success" style="float:right;position:relative;" name="submitprofil" type="submit" value="Modifier" />Modifier</button></td> -->
+						</form>
 					</tr>
 				</tbody>
 			</table>
@@ -84,40 +84,53 @@
 							echo'<td width="20%"><input type="text" name="total_semaine" value="'.$v['total_semaine'].'" /></td>';
 							echo'<td width="20%"><input type="text" name="total_mois" value="'.$v['total_mois'].'" /></td>';
 							echo'<td width="20%"><input type="text" name="total_annee" value="'.$v['total_annee'].'" /></td>';
-						?>
-						<td><button class="btn btn-success modify-row-horaire" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
-						<!-- <td><button class="btn btn-danger delete-row-horaire" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td> -->
-					</tr>
+							?>
+							<td><button class="btn btn-success modify-row" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
+							<!-- <td><button class="btn btn-danger delete-row" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td> -->
+						</tr>
+
 						<?php } ?>
 						<a href=javascript:history.go(-1)>Retour</a>
-				</tbody>
-			</table>
-		</div>
-	</body>
-	<script>
-	$(".modify-row-profil").on("click", function()
-	{
-		var $input = $(this).closest("tr").find(":input").serialize();
-		$.ajax({
-			url: "../model/edit.php",
-			type: "POST",
-			data: $input,
-			complete : function(resultat, statut){
-				window.location.reload();
-			}
+					</tbody>
+				</table>
+			</div>
+		</body>
+		<script>
+		$(".modify-row").on("click", function()
+		{
+			var $input = $(this).closest("tr").find(":input").serialize();
+			$.ajax({
+				url: "../model/edithoraires.php",
+				type: "POST",
+				data: $input,
+				complete : function(resultat, statut){
+					window.location.reload();
+				}
+			});
 		});
-	});
-	$(".modify-row-horaire").on("click", function()
-	{
-		var $input = $(this).closest("tr").find(":input").serialize();
-		$.ajax({
-			url: "../model/edithoraires.php",
-			type: "POST",
-			data: $input,
-			complete : function(resultat, statut){
-				window.location.reload();
-			}
+		$(".modify-row-profil").on("click", function()
+		{
+			var $input = $(this).closest("tr").find(":input").serialize();
+			$.ajax({
+				url: "../model/edit.php",
+				type: "POST",
+				data: $input,
+				complete : function(resultat, statut){
+					window.location.reload();
+				}
+			});
 		});
-	})
-	</script>
+            // $(".delete-row").on("click", function()
+            // {
+            //     var $input = $(this).closest("tr").find(":input").serialize();
+            //     $.ajax({
+            //         url: "../model/deletehoraires.php",
+            //         type: "POST",
+            //         data: $input,
+            //         complete : function(resultat, statut){
+            //             window.location.reload();
+            //         }
+            //     });
+            // })
+</script>
 </html>
