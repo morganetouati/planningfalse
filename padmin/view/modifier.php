@@ -53,15 +53,16 @@ $roles = $req->fetchAll();
 							<td width="20%"><input type="text" name="salaire_brut" value="<?php echo $membre_array['salaire_brut']; ?>" /></td>
 							<td width="20%"><input type="text" name="salaire_net" value="<?php echo $membre_array['salaire_net']; ?>" /></td>
 							<td width="20%"><input type="text" name="societe" value="<?php echo $membre_array['societe']; ?>" /></td>
-							<label for="role">Statut</label>
+							<td width="20%">
 								<select name="role">
 									<?php
 									foreach ($roles as $role)
 									{
-										echo '<option value="'.$role["id"] .'">'.$role['libelle'].'</option>';
+										echo '<option value="'.$role["id"] .'"' . (($membre_array['role_id'] == $role["id"]) ? ("selected") : (""))  . '>'.$role['libelle'].'</option>';
 									}
 									?>
 								</select>
+							</td>
 							<!-- <td width="20%"><input type="text" name="role" value="<?php //echo $membre_array['role']; ?>" /></td> -->
 							<td><button class="btn btn-success modify-row-profil" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
 							<!-- <td><button class="btn btn-danger delete-row-profil" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td><td><button class="btn btn-success" style="float:right;position:relative;" name="submitprofil" type="submit" value="Modifier" />Modifier</button></td> -->
