@@ -41,6 +41,9 @@ function currentDayAlreadyInDb($date)
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script src="../js/bootstrap.min.js" ></script>
+	<script src="../js/jquery-3.1.1.min.js"></script>
 	<title>Planning</title>
 </head>
 <body>
@@ -56,7 +59,8 @@ function currentDayAlreadyInDb($date)
 	</header>
 	<div id="global" style="width: 100%;">
 		<form id="horaire" action="../php/time.php" method="post">
-			<label for="start">Horaire normale d'arrivée</label>
+			<div class="form-group">
+			<label for="start">Début</label>
 			<button type="submit" name="start" value="start" <?php if (currentDayAlreadyInDb($lastDateInDb)){echo "disabled=disabled";}?>>Début arrivée normale</button>
 			<label for="hformation">Horaire formation</label>
 			<button type="submit" name="hformation" value="heure formation">Horaire formation</button>
@@ -70,9 +74,21 @@ function currentDayAlreadyInDb($date)
 			<button type="submit" name="reprise" value="reprise">Reprise</button>
 			<label for="fin">Fin de journée</label>
 			<button type="submit" name="fin" value="fin">Fin</button>
+		</div>
 		</form>
 		<div class="col-12 col-md-auto">
-			<table id="heure">
+			<table id="heure" class="table table-hover">
+				<tr>
+					<th>total heure normal</th>
+					<th>total heure semaine</th>
+					<th>total heure majoré</th>
+					<th>total formation</th>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-12 col-md-auto">
+			<table id="heure" class="table table-hover">
 				<tr>
 					<th>start</th>
 					<th>pause</th>
