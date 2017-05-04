@@ -15,6 +15,8 @@ $membre = $bdd->query("SELECT * FROM users");
 <body>
 	<h1>Panel Admin</h1>
 <ul>
+	<a href="view/ajouter.php">Ajouter</a>
+	<a href="view/deconnexion.php">Se Déconnecter</a>
 	<?php
 		while ($m = $membre->fetch())  {?>
 			<li><?= $m['id_users'] ?> : <?= $m['prenom'] ?> -
@@ -23,7 +25,6 @@ $membre = $bdd->query("SELECT * FROM users");
 				<a href="view/supprimer.php?user=<?=$m['id_users'] ?>">Supprimer</a>
 			</li>
 		<?php } ?>
-	<a href="view/ajouter.php">Ajouter</a>
 </ul>
 </body>
 </html>
