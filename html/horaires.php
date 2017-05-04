@@ -56,8 +56,14 @@ function currentDayAlreadyInDb($date)
 	</header>
 	<div id="global" style="width: 100%;">
 		<form id="horaire" action="../php/time.php" method="post">
-			<label for="start">Horaire d'arrivée</label>
-			<button type="submit" name="start" value="start" <?php if (currentDayAlreadyInDb($lastDateInDb)){echo "disabled=disabled";}?>>Début</button>
+			<label for="start">Horaire normale d'arrivée</label>
+			<button type="submit" name="start" value="start" <?php if (currentDayAlreadyInDb($lastDateInDb)){echo "disabled=disabled";}?>>Début arrivée normale</button>
+			<label for="hformation">Horaire formation</label>
+			<button type="submit" name="hformation" value="heure formation">Horaire formation</button>
+			<label for="hmajoré">Horaire majoré</label>
+			<button type="submit" name="hmajore" value="heure majore">Horaire majore</button>
+			<label for="hsupp">Horaire Supplementaire</label>
+			<button type="submit" name="hsupplementaire" value="heure supplementaire">Horaire supplementaire</button>
 			<label for="pause">Horaire de pause</label>
 			<button type="submit" name="pause" value="pause">Pause</button>
 			<label for="reprise">Horaire de reprise</label>

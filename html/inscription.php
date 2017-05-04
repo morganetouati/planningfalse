@@ -1,11 +1,8 @@
 <?php
-
 require("../bdd.php");
-
 $req = $bdd->prepare("SELECT id, libelle FROM role");
 $req->execute();
 $roles = $req->fetchAll();
-
 ?>
 
 <!Doctype html>
@@ -14,6 +11,8 @@ $roles = $req->fetchAll();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"/></script>
 	<title>Planning</title>
 </head>
 <body>
@@ -26,6 +25,7 @@ $roles = $req->fetchAll();
 			</ul>
 		</nav>
 	</header>
+	<div class="col-md-10" style="display:inline-block;">
 	<h2>Inscription</h2>
 	<form action="../php/signup.php" method="post">
 		<label for="nom">Nom :</label>
@@ -46,7 +46,7 @@ $roles = $req->fetchAll();
 		<input type="number" id="salaire_brut" name="salaire_brut" required/>
 		<label for="salaire_net">Salaire net :</label>
 		<input type="number" id="salaire_net" name="salaire_net" required/>
-		<label for="salaire_net">Societe</label>
+		<label for="societe">Societe</label>
 		<select name="societe">
 			<option value="MUNCI(Issy)">MUNCI (Issy)</option>
 			<option value="MUNCI(Paris)">MUNCI (Paris)</option>
@@ -65,5 +65,6 @@ $roles = $req->fetchAll();
 		</select>
 		<input type="submit" name="submit" value="Inscription"/>
 	</form>
+	<div class="col-md-10" style="display:inline-block;">
 </body>
 </html>

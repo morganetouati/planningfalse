@@ -4,7 +4,7 @@ require("../bdd.php");
 
 if(isset($_POST['submitconnexion']))
 {
-	$mailco = htmlspecialchars($_POST['email']);
+	$mailco = $_POST['email'];
 	$passco = sha1($_POST['password']);
 	if(!empty($mailco) && !empty($passco))
 	$req = $bdd->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
@@ -15,6 +15,7 @@ if(isset($_POST['submitconnexion']))
 		$userinfo = $req->fetch();
 		$_SESSION['id_users'] = $userinfo['id_users'];
 		$_SESSION['email'] = $userinfo['email'];
+		$_SESSION['password'] = $userinfo['password'];
 		header("Location: ../html/profil.php");
 	}
 	else{

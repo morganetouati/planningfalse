@@ -67,4 +67,4 @@ if (isset($_SESSION['id_users']) && $_SESSION['id_users'] > 0)
 		</html>
 		<?php
 	}
-	?>;
+	?>

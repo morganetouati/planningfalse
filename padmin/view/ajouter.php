@@ -1,11 +1,8 @@
 <?php
-
 require("../../bdd.php");
-
 $req = $bdd->prepare("SELECT id, libelle FROM role");
 $req->execute();
 $roles = $req->fetchAll();
-
 ?>
 
 <!Doctype html>
@@ -44,7 +41,7 @@ $roles = $req->fetchAll();
 				<input type="number" id="salaire_brut" name="salaire_brut" required/>
 				<label for="salaire_net">Salaire net :</label>
 				<input type="number" id="salaire_net" name="salaire_net" required/>
-				<label for="salaire_net">Societe</label>
+				<label for="societe">Societe</label>
 				<select name="societe">
 					<option value="MUNCI(Issy)">MUNCI (Issy)</option>
 					<option value="MUNCI(Paris)">MUNCI (Paris)</option>

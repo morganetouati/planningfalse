@@ -63,9 +63,7 @@ $roles = $req->fetchAll();
 									?>
 								</select>
 							</td>
-							<!-- <td width="20%"><input type="text" name="role" value="<?php //echo $membre_array['role']; ?>" /></td> -->
 							<td><button class="btn btn-success modify-row-profil" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
-							<!-- <td><button class="btn btn-danger delete-row-profil" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td><td><button class="btn btn-success" style="float:right;position:relative;" name="submitprofil" type="submit" value="Modifier" />Modifier</button></td> -->
 						</form>
 					</tr>
 				</tbody>
@@ -105,7 +103,6 @@ $roles = $req->fetchAll();
 							echo'<td width="20%"><input type="text" name="total_annee" value="'.$v['total_annee'].'" /></td>';
 							?>
 							<td><button class="btn btn-success modify-row" style="float:right;position:relative;" value="Modifier" />Modifier</button></td>
-							<!-- <td><button class="btn btn-danger delete-row" style="float:right;position:relative;" value="Supprimer" />Supprimer</button></td> -->
 						</tr>
 
 						<?php } ?>
