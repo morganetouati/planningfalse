@@ -72,8 +72,6 @@ function currentDayAlreadyInDb($date)
 							<button class="btn btn-primary m-t-10" type="submit" name="hformation" value="heure formation">Horaire formation</button>
 							<label for="hmajoré">Horaire majoré</label>
 							<button class="btn btn-primary m-t-10" type="submit" name="hmajore" value="heure majore">Horaire majorée</button>
-							<label  for="hsupp">Horaire Supplementaire</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="hsupplementaire" value="heure supplementaire">Horaire supplementaire</button>
 							<label for="pause">Horaire de pause</label>
 							<button class="btn btn-primary m-t-10" type="submit" name="pause" value="pause">Pause</button>
 							<label for="reprise">Horaire de reprise</label>
