@@ -21,6 +21,7 @@ h2 {
 
 nav {
 	margin-top: 20px;
+	margin-bottom: 10px;
 }
 
 ul {
@@ -40,122 +41,29 @@ li a {
 	color: white;
 	text-align: center;
 	padding: 14px 16px;
-	text-decoration: none;
 }
 
 li a:hover {
 	background-color: #fbbc05;
 }
 
+a,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+}
+
 .m-t-10 {
 	margin-top: 10px;
 }
 
-/*form{
-	border-radius: 5px;
-	background-color: #a25050;
-	padding: 20px;
-	width: 42%;
-	position: absolute;
-	top: 26%;
-	left: 27%;
-	}*/
-
-/*label {
-	float: left;
-	display: block;
-	width: 150px;
+form#horaire label{
+	font-size: 16px;
+	color: #333;
+	font-weight: bold;
 }
-
-input[type=text], select {
-	width: 63%;
-	padding: 12px 20px;
-	float: left;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
-}
-
-input[type=email], select {
-	width: 63%;
-	padding: 12px 20px;
-	float: left;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
-}
-
-input[type=password], select {
-	width: 63%;
-	padding: 12px 20px;
-	float: left;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
-}
-
-input[type=number], select {
-	width: 63%;
-	padding: 12px 20px;
-	float: left;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
-}
-
-input[type=date], select {
-	width: 63%;
-	padding: 12px 20px;
-	float: left;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
-}
-
-input[type=button], select {
-	width: 63%;
-	padding: 12px 20px;
-	float: left;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin-bottom: 8px;
-	box-sizing: border-box;
-}
-
-input[type=submit] {
-	width: 50%;
-	background-color: #f02727;
-	color: white;
-	padding: 14px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	margin-left: 23%;
-}
-
-input[type=submit]:hover {
-	background-color:pink;
-	}*/
-
-/*form#horaire{
-	border: 1px solid black;
-	width: 25%;
-	margin-top: 8%;
-	position: relative;
-	float: left;
-	left: 3%;
-	}*/
-
-	form#horaire label{
-		font-size: 16px;
-		color: #333;
-		font-weight: bold;
-	}
 
 form#horaire button[type=submit]{
 	width: 43%;
@@ -179,9 +87,9 @@ table#heure{
 
 table#heure2{
 	position: relative;
-    float: right;
-    left: -2%;
-    margin-top: -24%;
+	float: right;
+	left: -2%;
+	margin-top: -24%;
 }
 
 

@@ -14,10 +14,10 @@ if (isset($_SESSION['id_users']) && $_SESSION['id_users'] > 0)
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
-		<script src="../js/bootstrap.min.js" ></script>
+		<link rel="stylesheet" href="../css/style.css">
 		<script src="../js/jquery-3.1.1.min.js"></script>
+		<script src="../js/bootstrap.min.js" ></script>
 		<title>Planning</title/>
 		</head>
 		<body>
@@ -27,7 +27,7 @@ if (isset($_SESSION['id_users']) && $_SESSION['id_users'] > 0)
 					<ul>
 						<li><a href="horaires.php">Mes horaires</a></li>
 						<li><a href="calendrier.php">Calendrier</a></li>
-						<li><a href="deconnexion.php">Déconnexion</a></li>
+						<li><a href="../php/logout.php">Déconnexion</a></li>
 					</ul>
 				</nav>
 			</header>
