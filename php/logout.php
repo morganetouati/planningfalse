@@ -2,4 +2,4 @@
 session_start ();
 session_unset ();
 session_destroy ();
-header ('location: ../html/index.php');
+header ('location: /planning/html/index.php');

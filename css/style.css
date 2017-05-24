@@ -59,6 +59,31 @@ a:active {
 	margin-top: 10px;
 }
 
+#formhoraire{
+width: 46%;
+}
+
+form#horaire{
+width: auto;
+}
+
+form#horaire .checkbox-inline {
+	width: 44%;
+	float: left;
+	margin-left: 9px;
+	padding-top: 5px;
+}
+
+form#horaire label.checkbox-inline{
+	font-size: 13px;
+}
+
+form#horaire input[type=checkbox]{
+	position: relative;
+	left: 0;
+	float: right;
+}
+
 form#horaire label{
 	font-size: 16px;
 	color: #333;
@@ -80,18 +105,23 @@ form#horaire button[type=submit][disabled=disabled] {
 
 table#heure{
 	position: relative;
-	float: right;
-	left: 102%;
-	margin-top: -48%;
+	left: 230%;
+	margin-top: -73%;
+	height: auto;
 }
 
 table#heure2{
-	position: relative;
-	float: right;
-	left: -2%;
-	margin-top: -24%;
+	margin-left: 48%;
+	margin-top: auto;
 }
 
+#journee{
+    font-size: 16px;
+    position: relative;
+    top: -319px;
+    left: 53%;
+    width: 132%;
+}
 
 #fleche{
 	margin-bottom:5%;

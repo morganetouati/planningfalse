@@ -54,76 +54,93 @@ function currentDayAlreadyInDb($date)
 			<ul>
 				<li><a href="profil.php">Mon profil</a></li>
 				<li><a href="calendrier.php">Calendrier</a></li>
-				<li><a href="deconnexion.php">Déconnexion</a></li>
+				<li><a href="../php/logout.php">Déconnexion</a></li>
 			</ul>
 		</nav>
 	</header>
 	<div class="container">
 		<h2>Pointeuse horaire</h2>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Un petit clic pour vous signaler? ;)</div>
-					<div class="panel-body">
-						<form id="horaire" role="form" action="../php/time.php" method="post">
-							<label for="start">Début</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="start" value="start" <?php if (currentDayAlreadyInDb($lastDateInDb)){echo "disabled=disabled";}?>>Début arrivée normale</button>
-							<label for="hformation">Horaire formation</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="hformation" value="heure formation">Horaire formation</button>
-							<label for="hmajoré">Horaire majoré</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="hmajore" value="heure majore">Horaire majorée</button>
-							<label for="pause">Horaire de pause</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="pause" value="pause">Pause</button>
-							<label for="reprise">Horaire de reprise</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="reprise" value="reprise">Reprise</button>
-							<label for="fin">Fin de journée</label>
-							<button class="btn btn-primary m-t-10" type="submit" name="fin" value="fin">Fin</button>
-						</form>
-					</div>
+		<div id="formhoraire">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Un petit clic pour vous signaler? ;)</div>
+				<div class="panel-body">
+					<form id="horaire" role="form" action="../php/time.php" method="post">
+						<label class="checkbox-inline">heure normal
+							<input type="checkbox" name="hnormal"/>
+						</label>
+						<label class="checkbox-inline">heure formation
+							<input type="checkbox"name="hformation"/>
+						</label>
+						<label class="checkbox-inline">heure majorée 50%
+							<input type="checkbox" name="hmajore1"/>
+						</label>
+						<label class="checkbox-inline">heure majorée 100%
+							<input type="checkbox" name="hmajore2"/>
+						</label>
+						<label for="start">Début</label>
+						<button class="btn btn-primary m-t-10" type="submit" name="start" value="start" <?php if (currentDayAlreadyInDb($lastDateInDb)){echo "disabled=disabled";}?>>Début</button>
+						<label for="pause">Horaire de pause</label>
+						<button class="btn btn-primary m-t-10" type="submit" name="pause" value="pause">Pause</button>
+							<label class="checkbox-inline">heure normal
+							<input type="checkbox" name="repnormal"/>
+						</label>
+						<label class="checkbox-inline">heure formation
+							<input type="checkbox"name="repformation"/>
+						</label>
+						<label class="checkbox-inline">heure majorée 50%
+							<input type="checkbox" name="repmajore1"/>
+						</label>
+						<label class="checkbox-inline">heure majorée 100%
+							<input type="checkbox" name="repmajore2"/>
+						</label>
+						<label for="reprise">Horaire de reprise</label>
+						<button class="btn btn-primary m-t-10" type="submit" name="reprise" value="reprise">Reprise</button>
+						<label for="fin">Fin de journée</label>
+						<button class="btn btn-primary m-t-10" type="submit" name="fin" value="fin">Fin</button>
+					</form>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div id="" class="col-6 col-md-6">
-		<table id="heure" class="table table-hover">
-			<tr>
-				<th>total heure normal</th>
-				<th>total heure semaine</th>
-				<th>total heure majoré</th>
-				<th>total formation</th>
-			</tr>
-		</table>
-	</div>
-
-	<div class="col-6 col-md-6">
-		<table id="heure2" class="table table-hover">
-			<tr>
-				<th>start</th>
-				<th>pause</th>
-				<th>reprise</th>
-				<th>fin</th>
-				<th>total journée</th>
-				<th>total semaine</th>
-				<th>total mois</th>
-				<th>total année</th>
-			</tr>
-			<?php
-			foreach ($reqs as $k => $v) {
-				echo'<tr>';
-				echo '<td>'.$v['start'].'</td>';
-				echo '<td>'.date('H:i:s',strtotime($v['pause'])).'</td>';
-				echo '<td>'.date('H:i:s',strtotime($v['reprise'])).'</td>';
-				echo '<td>'.date('H:i:s',strtotime($v['fin'])).'</td>';
-				echo '<td>'.date('H:i:s',strtotime($v['total_journee'])).'</td>';
-				echo '<td>'.$v['total_semaine'].'</td>';
-				echo '<td>'.$v['total_mois'].'</td>';
-				echo '<td>'.$v['total_annee'].'</td>';
-				echo '</tr>';
-			}
-			echo '<p style="display: block; margin-top: -53%;">Vos horaires ont bien été enregistrés pour le jour : '.$v['jour'].'</p>';
-			?>
-		</table>
-	</div>
-
-</body>
+		<div class="col-md-8">
+			<div class="col-md-6">
+				<table id="heure" class="table table-hover">
+					<tr>
+						<th>total heure normal</th>
+						<th>total formation</th>
+						<th>total heure majorée 50%</th>
+						<th>total heure majorée 100%</th>
+					</tr>
+				</table>
+			</div>
+			<div class="col-md-6">
+				<table id="heure2" class="table table-hover">
+					<tr>
+						<th>start</th>
+						<th>pause</th>
+						<th>reprise</th>
+						<th>fin</th>
+						<th>total journée</th>
+						<th>total semaine</th>
+						<th>total mois</th>
+						<th>total année</th>
+					</tr>
+					<?php
+					foreach ($reqs as $k => $v) {
+						echo'<tr>';
+						echo '<td>'.$v['start'].'</td>';
+						echo '<td>'.date('H:i:s',strtotime($v['pause'])).'</td>';
+						echo '<td>'.date('H:i:s',strtotime($v['reprise'])).'</td>';
+						echo '<td>'.date('H:i:s',strtotime($v['fin'])).'</td>';
+						echo '<td>'.date('H:i:s',strtotime($v['total_journee'])).'</td>';
+						echo '<td>'.$v['total_semaine'].'</td>';
+						echo '<td>'.$v['total_mois'].'</td>';
+						echo '<td>'.$v['total_annee'].'</td>';
+						echo '</tr>';
+					}
+					echo '<p id="journee">Vos horaires ont bien été enregistrés pour le jour : '.$v['jour'].'</p>';
+					?>
+				</table>
+			</div>
+		</div>
+	</body>
 </html>
