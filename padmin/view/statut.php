@@ -1,3 +1,5 @@
+<?php include("../model/selectstatut.php");?>
+<?php include("../model/deletestatut.php");?>
 <!Doctype html>
 <html>
 <head>
@@ -22,15 +24,30 @@
 	</header>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-primary">
-					<div class="panel-heading">Ajouter un role</div>
-					<div class="panel-body">
-						<form action="../model/role.php" role="form" method="post">
-							<label for="libelle">Statut à ajouter :</label>
-							<input class="form-control" type="text" id="libelle" name="libelle" placeholder="Example: développeur" required/>
-							<input class="btn btn-primary m-t-10" type="submit" name="submit" value="Ajouter"/>
-						</form>
+			<div class="col-md-12">
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Liste des statuts déjà existant</div>
+						<div class="panel-body">
+							<?php
+							foreach ($sel as $k => $v) {
+								echo '<p>'.$v['libelle'].'</p>';
+								echo '<a href="../model/deletestatut.php?id='.$v['id'].'">X</a>';
+							}
+							?>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">Ajouter un statut</div>
+						<div class="panel-body">
+							<form action="../model/statutmodel.php" role="form" method="post">
+								<input class="form-control" type="text" id="libelle" name="libelle" placeholder="Exemple: développeur" required/>
+								<input class="btn btn-primary m-t-10" type="submit" name="submit" value="Ajouter"/>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

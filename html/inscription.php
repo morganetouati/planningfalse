@@ -35,23 +35,23 @@ $roles = $req->fetchAll();
 					<div class="panel-body">
 						<form action="../php/signup.php" role="form" method="post">
 							<label for="nom">Nom :</label>
-							<input class="form-control" type="text" id="nom" name="nom" placeholder="Example: Dupont" required/>
+							<input class="form-control" type="text" id="nom" name="nom" placeholder="Exemple: Dupont" required/>
 							<label for="prenom">Prénom :</label>
-							<input class="form-control" type="text" id="prenom" placeholder="Example: James" name="prenom" required/>
+							<input class="form-control" type="text" id="prenom" placeholder="Exemple: James" name="prenom" required/>
 							<label for="email">Email :</label>
-							<input class="form-control" type="email" id="email" placeholder="Example: test@gmail.com" name="email" required/>
+							<input class="form-control" type="email" id="email" placeholder="Exemple: test@gmail.com" name="email" required/>
 							<label for="password">Mot de passe :</label>
-							<input class="form-control" type="password" id="password" placeholder="Example: motdepasse" name="password" required/>
+							<input class="form-control" type="password" id="password" placeholder="Exemple: motdepasse" name="password" required/>
 							<label for="start_contrat">Début du contrat :</label>
-							<input class="form-control" type="date" id="start_contrat" placeholder="Example: 00/00/0000" name="start_contrat" required/>
+							<input class="form-control" type="date" id="start_contrat" placeholder="Exemple: 00/00/0000" name="start_contrat" required/>
 							<label for="end_contrat">Fin du contrat :</label>
-							<input class="form-control" type="date" id="end_contrat" placeholder="Example: 00/00/0000" name="end_contrat" required/>
+							<input class="form-control" type="date" id="end_contrat" placeholder="Exemple: 00/00/0000" name="end_contrat" required/>
 							<label for="heure_semaine">Heure par semaine :</label>
-							<input class="form-control" type="number" id="heure_semaine" placeholder="Example: 00" name="heure_semaine" required/>
+							<input class="form-control" type="number" id="heure_semaine" placeholder="Exemple: 00" name="heure_semaine" required/>
 							<label for="salaire_brut">Salaire brut :</label>
-							<input class="form-control" type="number" id="salaire_brut" placeholder="Example: 0000" name="salaire_brut" required/>
+							<input class="form-control" type="number" id="salaire_brut" placeholder="Exemple: 0000" name="salaire_brut" required/>
 							<label for="salaire_net">Salaire net :</label>
-							<input class="form-control" type="number" id="salaire_net" placeholder="Example: 0000" name="salaire_net" required/>
+							<input class="form-control" type="number" id="salaire_net" placeholder="Exemple: 0000" name="salaire_net" required/>
 							<label class="m-t-10" for="societe">Societe</label>
 							<select class="form-control" name="societe">
 								<option value="MUNCI(Issy)">MUNCI (Issy)</option>

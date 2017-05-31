@@ -10,4 +10,5 @@ if(isset($_POST['submit']))
 		)
 	);
 }
+header("Location: ../view/statut.php");
 ?>

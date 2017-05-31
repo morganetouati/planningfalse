@@ -4,7 +4,7 @@ include("../bdd.php");
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];
 $email = $_POST['email'];
-$password = md5($_POST['password']);
+$password = sha1($_POST['password']);
 $start_contrat = $_POST['start_contrat'];
 $end_contrat = $_POST['end_contrat'];
 $heure_semaine = $_POST['heure_semaine'];

@@ -23,7 +23,7 @@ $membre = $bdd->query("SELECT * FROM users");
 		<nav>
 			<ul>
 				<li><a href="view/ajouter.php">Ajouter un utilisateur</a></li>
-				<li><a href="view/statut.php">Ajouter un role</a></li>
+				<li><a href="view/statut.php">Ajouter un statut</a></li>
 				<li><a href="model/logout.php">Se déconnecter</a></li>
 			</ul>
 		</nav>

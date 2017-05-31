@@ -65,8 +65,9 @@ function currentDayAlreadyInDb($date)
 				<div class="panel-heading">Un petit clic pour vous signaler? ;)</div>
 				<div class="panel-body">
 					<form id="horaire" role="form" action="../php/time.php" method="post">
-						<label class="checkbox-inline">heure normal
-							<input type="checkbox" name="hnormal"/>
+						<label for="start">Début</label>
+						<label class="checkbox-inline">heure normale
+							<input type="checkbox" name="hnormale"/>
 						</label>
 						<label class="checkbox-inline">heure formation
 							<input type="checkbox"name="hformation"/>
@@ -77,12 +78,12 @@ function currentDayAlreadyInDb($date)
 						<label class="checkbox-inline">heure majorée 100%
 							<input type="checkbox" name="hmajore2"/>
 						</label>
-						<label for="start">Début</label>
 						<button class="btn btn-primary m-t-10" type="submit" name="start" value="start" <?php if (currentDayAlreadyInDb($lastDateInDb)){echo "disabled=disabled";}?>>Début</button>
 						<label for="pause">Horaire de pause</label>
 						<button class="btn btn-primary m-t-10" type="submit" name="pause" value="pause">Pause</button>
-							<label class="checkbox-inline">heure normal
-							<input type="checkbox" name="repnormal"/>
+						<label for="reprise">Horaire de reprise</label>
+						<label class="checkbox-inline">heure normale
+							<input type="checkbox" name="repnormale"/>
 						</label>
 						<label class="checkbox-inline">heure formation
 							<input type="checkbox"name="repformation"/>
@@ -93,7 +94,6 @@ function currentDayAlreadyInDb($date)
 						<label class="checkbox-inline">heure majorée 100%
 							<input type="checkbox" name="repmajore2"/>
 						</label>
-						<label for="reprise">Horaire de reprise</label>
 						<button class="btn btn-primary m-t-10" type="submit" name="reprise" value="reprise">Reprise</button>
 						<label for="fin">Fin de journée</label>
 						<button class="btn btn-primary m-t-10" type="submit" name="fin" value="fin">Fin</button>
@@ -103,13 +103,42 @@ function currentDayAlreadyInDb($date)
 		</div>
 		<div class="col-md-8">
 			<div class="col-md-6">
-				<table id="heure" class="table table-hover">
-					<tr>
-						<th>total heure normal</th>
-						<th>total formation</th>
-						<th>total heure majorée 50%</th>
-						<th>total heure majorée 100%</th>
-					</tr>
+				<thead>
+					<table id="heure" class="table table-hover">
+						<tr>
+							<th>#</th>
+							<th>total heure normale</th>
+							<th>total heure formation</th>
+							<th>total heure majorée</th>
+							<th>total heure global</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Semaine</th>
+							<?php
+							foreach ($reqs as $k => $v) {
+								echo '<td>'.$v['total_semaine'].'</td>';
+							}
+							?>
+						</tr>
+						<tr>
+							<th scope="row">Mois</th>
+							<?php
+							foreach ($reqs as $k => $v) {
+								echo '<td>'.$v['total_mois'].'</td>';
+							}
+							?>
+						</tr>
+						<tr>
+							<th scope="row">Annee</th>
+							<?php
+							foreach ($reqs as $k => $v) {
+								echo '<td>'.$v['total_annee'].'</td>';
+							}
+							?>
+						</tr>
+					</tbody>
 				</table>
 			</div>
 			<div class="col-md-6">
@@ -119,10 +148,10 @@ function currentDayAlreadyInDb($date)
 						<th>pause</th>
 						<th>reprise</th>
 						<th>fin</th>
-						<th>total journée</th>
-						<th>total semaine</th>
-						<th>total mois</th>
-						<th>total année</th>
+						<th>total heure normale</th>
+						<th>total heure formation</th>
+						<th>total heure majorée</th>
+						<th>total heure global</th>
 					</tr>
 					<?php
 					foreach ($reqs as $k => $v) {
@@ -131,10 +160,10 @@ function currentDayAlreadyInDb($date)
 						echo '<td>'.date('H:i:s',strtotime($v['pause'])).'</td>';
 						echo '<td>'.date('H:i:s',strtotime($v['reprise'])).'</td>';
 						echo '<td>'.date('H:i:s',strtotime($v['fin'])).'</td>';
-						echo '<td>'.date('H:i:s',strtotime($v['total_journee'])).'</td>';
-						echo '<td>'.$v['total_semaine'].'</td>';
-						echo '<td>'.$v['total_mois'].'</td>';
-						echo '<td>'.$v['total_annee'].'</td>';
+						// echo '<td>'.date('H:i:s',strtotime($v['total_journee'])).'</td>';
+						// echo '<td>'.$v['total_semaine'].'</td>';
+						// echo '<td>'.$v['total_mois'].'</td>';
+						// echo '<td>'.$v['total_annee'].'</td>';
 						echo '</tr>';
 					}
 					echo '<p id="journee">Vos horaires ont bien été enregistrés pour le jour : '.$v['jour'].'</p>';
@@ -143,4 +172,4 @@ function currentDayAlreadyInDb($date)
 			</div>
 		</div>
 	</body>
-</html>
+	</html>
