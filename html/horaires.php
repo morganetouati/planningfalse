@@ -12,7 +12,6 @@ if (!isset($_SESSION['id_users'])) {
 }
 $id_users = $_SESSION['id_users'];
 $reqs = $horaire->select_horaire($id_users);
-$lastDateInDb = $reqs[count($reqs) - 1];
 // $req = $bdd->prepare("SELECT id_horaire,start,pause,reprise,fin,jour,total_heure_normale,total_semaine,total_mois,total_annee, mois, semaine, annee, id_users FROM horaires WHERE id_users = :id_users ORDER BY start");
 // $req->execute([
 // 	"id_users" => $_SESSION['id_users'],
@@ -25,7 +24,7 @@ $urlresource = "/planning/vendor/kalliste-sas/Planning/Resources/";
 function currentDayAlreadyInDb($date) {
     global $reqs;
     $currentDate = new DateTime();
-    foreach ($reqs as $value => $item) {
+    foreach ($reqs as $item) {
         if (date_format($currentDate, 'Y-m-d') == date_format(new DateTime($item["start"]), 'Y-m-d')) {
             return true;
             break;

@@ -72,11 +72,11 @@ class Planning_Models_Horaire {
 
     public function select_horaire($id_users) {
         $bdd = $this->connect->getPdo();
+        
         //SELECT * FROM horaires WHERE `jour` BETWEEN '2017-05-04' AND '2017-06-07' AND `type1` = 'norm' AND `id_users` = 40
-        $req = $bdd->prepare("SELECT * FROM horaires WHERE `jour` BETWEEN '2017-05-04' AND '2017-06-07' AND `type1` = 'norm' AND `id_users` = 40");
-
-        /* $req = $bdd->prepare("SELECT id_horaire, start, pause, reprise, fin, jour, mois, semaine, annee, id_users FROM horaires WHERE id_users = :id_users ORDER BY start");
-         */
+        //$req = $bdd->prepare("SELECT * FROM horaires WHERE `jour` BETWEEN '2017-05-04' AND '2017-06-07' AND `type1` = 'norm' AND `id_users` = 40");
+        $req = $bdd->prepare("SELECT id_horaire, start, pause, reprise, fin, jour, mois, semaine, annee, id_users FROM horaires WHERE id_users = :id_users ORDER BY start");
+        
         $req->execute(array(
             "id_users" => $id_users,
         ));
