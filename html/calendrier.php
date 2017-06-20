@@ -1,6 +1,10 @@
 <?php
 session_start();
-require("../bdd.php");
+$autoload = require '../vendor/autoload.php';
+$connect = new Planning_Bdd_Connect();
+$bdd = $connect->getPdo();
+//resources css
+$urlresource = "/planning/vendor/kalliste-sas/Planning/Resources/";
 if (!isset($_SESSION['id_users'])) {
 	header ('Location: index.php');
 	exit();
@@ -11,7 +15,7 @@ if (!isset($_SESSION['id_users'])) {
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/style.css">
 	<title>Planning</title>
 </head>
 <body>
@@ -20,7 +24,7 @@ if (!isset($_SESSION['id_users'])) {
 		<nav>
 			<ul>
 				<li><a href="profil.php">Mon profil</a></li>
-				<li><a href="deconnexion.php">Déconnexion</a></li>
+				<li><a href="../php/logout.php">Déconnexion</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -31,15 +35,15 @@ if (!isset($_SESSION['id_users'])) {
 	$anne = date("Y");
 	?>
 	<div id="fleche">
-		<img id="pre" src="../css/flep.png">
-		<img id="post" src="../css/flep2.png">
+		<img id="pre" src="<?php echo $urlresource; ?>css/flep.png">
+		<img id="post" src="<?php echo $urlresource; ?>css/flep2.png">
 	</div>
 
 	<div id="cont" >
 
 	</div>
 
-	<script src="../js/jquery-3.1.1.min.js"></script>
+	<script src="<?php echo $urlresource; ?>js/jquery-3.1.1.min.js"></script>
 	<script>
 
 	var mois = <?php echo $mois;?>;

@@ -1,10 +1,14 @@
+<?php
+//resources css
+$urlresource = "/planning/vendor/kalliste-sas/Planning/Resources/";
+?>
 <!Doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/style.css">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/style.css">
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/bootstrap.min.css">
 	<title>Panel Admin</title/>
 	</head>
 	<body>
@@ -66,7 +70,7 @@
 						echo '<td>'.date('H:i:s',strtotime($v['pause'])).'</td>';
 						echo '<td>'.date('H:i:s',strtotime($v['reprise'])).'</td>';
 						echo '<td>'.date('H:i:s',strtotime($v['fin'])).'</td>';
-						echo '<td>'.date('H:i:s',strtotime($v['total_journee'])).'</td>';
+						echo '<td>'.date('H:i:s',strtotime($v['total_heure_normale'])).'</td>';
 						echo '<td>'.$v['total_semaine'].'</td>';
 						echo '<td>'.$v['total_mois'].'</td>';
 						echo '<td>'.$v['total_annee'].'</td>';

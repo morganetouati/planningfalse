@@ -1,5 +1,6 @@
 <?php
-include("../bdd.php");
+$connect = new Planning_Bdd_Connect();
+$bdd = $connect->getPdo();
 
 $nom = $_POST['nom'];
 $prenom = $_POST['prenom'];

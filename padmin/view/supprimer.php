@@ -1,11 +1,15 @@
+<?php
+//resources css
+$urlresource = "/planning/vendor/kalliste-sas/Planning/Resources/";
+?>
 <!Doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../../css/style.css">
-	<link rel="stylesheet" href="../../css/bootstrap.min.css">
-	<script type="text/javascript" src="../../js/jquery-3.1.1.min.js"/></script>
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/style.css">
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/bootstrap.min.css">
+	<script type="text/javascript" src="<?php echo $urlresource; ?>js/jquery-3.1.1.min.js"/></script>
 	<title>Panel Admin</title/>
 	</head>
 	<body>
@@ -79,7 +83,7 @@
 							<td width="20%"><?php echo $v['pause']; ?></td>
 							<td width="20%"><?php echo $v['reprise']; ?></td>
 							<td width="20%"><?php echo $v['fin']; ?></td>
-							<td width="20%"><?php echo $v['total_journee']; ?></td>
+							<td width="20%"><?php echo $v['total_heure_normale']; ?></td>
 							<td width="20%"><?php echo $v['total_semaine']; ?></td>
 							<td width="20%"><?php echo $v['total_mois']; ?></td>
 							<td width="20%"><?php echo $v['total_annee']; ?></td>

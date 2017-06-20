@@ -1,0 +1,14 @@
+{
+    "name": "morgane planning",
+    "description": "Fichier composer.json pour package Planning",
+    "license": "BSD-3-Clause",
+    "require": {
+        
+    },
+    "autoload": {
+        "psr-0": {
+            "Kalliste_": "vendor/kalliste-sas/",
+			"Planning_": "vendor/kalliste-sas/"
+        }
+    }
+}

@@ -1,6 +1,7 @@
 <?php
 session_start();
-require("../bdd.php");
+$connect = new Planning_Bdd_Connect();
+$bdd = $connect->getPdo();
 
 $mailco = $_POST['email'];
 $newpassword = sha1($_POST['newpassword']);

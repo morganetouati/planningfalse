@@ -1,7 +1,15 @@
 <?php
-session_start(); 
-require("../bdd.php");
+session_start();
+$autoload = require '../vendor/autoload.php';
+$connect = new Planning_Bdd_Connect();
+$bdd = $connect->getPdo();
+// $horaire = new Planning_Models_Horaire($connect);
+// var_dump($horaire);
+// die("lol");
+
 $membre = $bdd->query("SELECT * FROM users");
+//resources css
+$urlresource = "/planning/vendor/kalliste-sas/Planning/Resources/";
 ?>
 
 <!Doctype html>
@@ -11,10 +19,10 @@ $membre = $bdd->query("SELECT * FROM users");
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-	<link rel="stylesheet" href="../css/style.css" type="text/css">
-	<script src="../js/jquery-3.1.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="<?php echo $urlresource; ?>css/style.css" type="text/css">
+	<script src="<?php echo $urlresource; ?>js/jquery-3.1.1.min.js"></script>
+	<script src="<?php echo $urlresource; ?>js/bootstrap.min.js"></script>
 	<title>Panel Admin</title>
 </head>
 <body>

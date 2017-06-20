@@ -1,6 +1,8 @@
 <?php
 session_start();
-require("../bdd.php");
+$autoload = require '../vendor/autoload.php';
+$connect = new Planning_Bdd_Connect();
+$bdd = $connect->getPdo();
 
 if(isset($_POST['submitconnexion']))
 {
